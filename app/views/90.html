@@ -1,0 +1,36 @@
+
+
+<div class="row" style="background-image: url('images/salman1.jpg')">
+    <div class="col-*-*"></div>
+  </div>
+  <div class="row">
+	  <form class="form-group col-sm-offset-3 col-sm-6 ">
+	  	<input class="form-control " ng-model="searchText">
+	  </form>
+  </div>
+  <div class="row">
+   <table class=" col-sm-offset-2 col-sm-8 " >
+		<thead>
+		  <tr>
+		    <th class="col-sm-3">Movie</th>
+		    <th class="col-sm-3">Lead Actor</th>
+		    <th class="col-sm-3">Description</th>
+		    <th class="col-sm-3">Poster</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="m in movies | filter:searchText">
+
+				<td class="col-sm-3">{{m.name}}</td>
+				<td class="col-sm-3">{{m.actor}}</td>
+				<td class="col-sm-3">{{m.description}}</td>
+				
+				<td class="col-sm-3">
+					<img class="img-responsive movie" ng-src="{{m.photoUrl}}"></img>
+				</td>-
+			</tr>
+		  
+		</tbody>
+	</table>
+  </div>
+
